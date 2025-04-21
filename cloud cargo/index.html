@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Cargo</title>
+  <meta name="description" content="Cloud Cargo - A helium-powered blimp for flood relief and animal surveillance." />
+  <meta property="og:title" content="Cloud Cargo" />
+  <meta property="og:description" content="A smart aerial solution for delivery and wildlife monitoring." />
+  <meta property="og:image" content="https://example.com/cloudcargo-og.jpg" />
+  <meta property="og:url" content="https://cloudcargo.example.com" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      color: #333;
+    }
+    header {
+      background-color: #b3e5fc;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0077b6;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?fit=crop&w=1400&q=80') no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .section {
+      padding: 3rem 2rem;
+    }
+    .section h3 {
+      text-align: center;
+      color: #0077b6;
+    }
+    .features, .use-cases {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: #f1fefe;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex: 1 1 250px;
+      text-align: center;
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-form input, .contact-form textarea {
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .buy-section {
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .buy-section button {
+      background-color: #00897b;
+      color: white;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #b3e5fc;
+    }
+
+    /* Carousel Styles */
+    .carousel-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      height: 400px;
+    }
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+    .carousel-slide img {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      .features, .use-cases {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body onload="initCarousel()">
+  <header>
+    <h1>Cloud Cargo</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#about">About</a>
+      <a href="#buy">Buy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Revolutionizing Delivery & Wildlife Surveillance</h2>
+    <p>A helium-powered blimp to support flood relief and animal monitoring</p>
+  </div>
+
+  <section class="section" id="features">
+    <h3>Key Features</h3>
+    <div class="features">
+      <div class="card">Remote Controlled Operation</div>
+      <div class="card">Helium Powered High Lift</div>
+      <div class="card">Flood Relief Delivery</div>
+      <div class="card">Animal Surveillance Support</div>
+    </div>
+  </section>
+
+  <section class="section" id="usecases">
+    <h3>Use Cases</h3>
+    <div class="use-cases">
+      <div class="card">Disaster Aid Transport</div>
+      <div class="card">Wildlife Monitoring</div>
+      <div class="card">Emergency Package Drop</div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h3>About Cloud Cargo</h3>
+    <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.1rem; line-height: 1.6;">
+      Cloud Cargo is a revolutionary aerial logistics and surveillance solution designed for rapid deployment during natural disasters and wildlife conservation efforts. 
+      It is powered by helium, allowing it to float effortlessly over flooded areas where traditional vehicles cannot reach. Controlled remotely, it can carry essential goods, medical kits, and food supplies to people in need. 
+      Additionally, Cloud Cargo plays a crucial role in tracking and monitoring wildlife in dense forests and remote regions, helping conservationists and forest officials respond in real-time.
+      Built with lightweight materials, integrated GPS, and live video transmission capabilities, Cloud Cargo is a smart and eco-friendly way to address both humanitarian and environmental challenges.
+    </p>
+  </section>
+
+  <section class="section" id="demo-images">
+    <h3>Demo Images</h3>
+    <div class="carousel-container">
+      <div class="carousel-slide" id="carouselSlide">
+        <img src="images/IMG-20250417-WA0001.jpg" alt="Demo 1" />
+        <img src="images/IMG-20250417-WA0002.jpg" alt="Demo 2" />
+        <img src="images/IMG-20250417-WA0003.jpg" alt="Demo 3" />
+        <img src="images/IMG-20250417-WA0004.jpg" alt="Demo 4" />
+        <img src="images/IMG-20250417-WA0005.jpg" alt="Demo 5" />
+      </div>
+    </div>
+  </section>
+
+  <section class="buy-section" id="buy">
+    <h3>Get Your Cloud Cargo</h3>
+    <p>Pre-order your unit today and be a part of the future of smart logistics and wildlife conservation.</p>
+    <button onclick="window.location.href='pages/buy.html'">Buy Now</button>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>Contact Us</h3>
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Cloud Cargo. All rights reserved.
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you! We will get back to you soon.");
+    }
+
+    function initCarousel() {
+      const slide = document.getElementById("carouselSlide");
+      const container = document.querySelector(".carousel-container");
+      let index = 0;
+
+      function showNextSlide() {
+        index = (index + 1) % slide.children.length;
+        slide.style.transform = `translateX(-${index * container.clientWidth}px)`;
+      }
+
+      setInterval(showNextSlide, 3000);
+    }
+  </script>
+</body>
+</html>

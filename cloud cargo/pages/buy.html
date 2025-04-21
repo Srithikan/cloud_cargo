@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Cloud Cargo</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f0f8ff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #005b96;
+      margin-bottom: 3rem;
+    }
+
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product img {
+      width: 220px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .product img:hover {
+      transform: scale(1.05);
+    }
+
+    .product-details {
+      flex: 1 1 500px;
+    }
+
+    .product-details h2 {
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #004d7a;
+    }
+
+    .price {
+      display: inline-block;
+      background: #00bfa5;
+      color: #fff;
+      font-weight: bold;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+
+    .buy-btn {
+      background: linear-gradient(to right, #00796b, #004d40);
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .buy-btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(to right, #004d40, #002d2b);
+    }
+
+    @media (max-width: 768px) {
+      .product {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .product img {
+        width: 180px;
+        margin-bottom: 1rem;
+      }
+
+      .product-details h2 {
+        font-size: 1.7rem;
+      }
+
+      .price {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Buy Cloud Cargo</h1>
+    <div class="product">
+      <img src="../images/cloud-cargo-blimp.png" alt="Cloud Cargo Blimp">
+      <div class="product-details">
+        <h2>Cloud Cargo – Helium Blimp for Relief & Surveillance</h2>
+        <p class="price">₹ 10,000</p>
+        <ul>
+          <li>Helium powered, high-lift cargo blimp</li>
+          <li>Remote controlled for ease of navigation</li>
+          <li>Real-time GPS tracking & HD surveillance camera</li>
+          <li>Designed for flood rescue and animal monitoring</li>
+          <li>Lightweight composite build</li>
+        </ul>
+        <button class="buy-btn" onclick="payNow()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function payNow() {
+      var options = {
+        key: "rzp_test_1DP5mmOlF5G5ag", // Razorpay Test Key
+        amount: 1000000, // Amount in paise (₹10,000)
+        currency: "INR",
+        name: "Cloud Cargo",
+        description: "Purchase of Cloud Cargo Blimp",
+        image: "../images/cloud-cargo-blimp.png", // Use an absolute image URL if hosted online
+        handler: function (response) {
+          alert("✅ Payment successful!\n🧾 Payment ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: "Customer Name",
+          email: "customer@example.com",
+          contact: "9999999999"
+        },
+        theme: {
+          color: "#00796b"
+        }
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+</body>
+</html>
